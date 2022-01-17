@@ -78,7 +78,7 @@ class RegisterController extends Controller
         {
             $uniq = uniqid(rand().'_');
             $name = request()->file('avatar')->getClientOriginalName();
-            $avatar = $uniq.$name;
+            $avatar = $uniq.'_'.$name;
             request()->file('avatar')->storeAs('public/avatar' ,$avatar);
             
             //avatarファイル名をデータに追加
