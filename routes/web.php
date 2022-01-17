@@ -53,6 +53,10 @@ Route::middleware(['verified'])->group(function(){
     {
         Route::get('/profile/index' ,'ProfileController@index')->name('profile.index');
     });
+    
+    //user編集のルート
+    Route::get('/profile/{user}/edit' ,'ProfileController@edit')->name('profile.edit');
+    Route::put('/profile/{user}' ,'ProfileController@update')->name('profile.update');
 });
 
 //contactのルート

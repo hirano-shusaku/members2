@@ -12,4 +12,9 @@ class ProfileController extends Controller
         $users = User::all();
         return view('profile.index',compact('users'));
     }
+    
+    public function edit(User $user)
+    {
+        return view('profile.edit',compact('user'));
+    }
 }
