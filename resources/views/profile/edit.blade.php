@@ -26,12 +26,12 @@
                     
                     <div class="form-group">
                         <label for="name">お名前</label>
-                        <input type="text" name="name" class="form-control" id="name" value="{{ old('name'),$user->name }}">
+                        <input type="text" name="name" class="form-control" id="name" value="{{ old('name',$user->name) }}">
                     </div>
                     
                     <div class="form-group">
                         <label for="email">メールアドレス</label>
-                        <input type="text" name="email" class="form-control" id="email" value="{{ old('email'),$user->email }}">
+                        <input type="text" name="email" class="form-control" id="email" value="{{ old('email',$user->email) }}">
                     </div>
                     
                     <div class="form-group">

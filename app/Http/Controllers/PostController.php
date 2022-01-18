@@ -151,6 +151,8 @@ class PostController extends Controller
         
         $post->comments()->delete();
         
+        Storage::delete('public/images/'.$post->image);
+        
         $post->delete();
         return redirect()->route('home')->with('message', '投稿を削除しました');
     }
