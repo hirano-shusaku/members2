@@ -52,11 +52,16 @@ Route::middleware(['verified'])->group(function(){
     Route::middleware(['can:admin'])->group(function()
     {
         Route::get('/profile/index' ,'ProfileController@index')->name('profile.index');
+        Route::delete('/profile/{user}/delete' ,'ProfileController@delete')->name('profile.delete');
     });
     
     //user編集のルート
     Route::get('/profile/{user}/edit' ,'ProfileController@edit')->name('profile.edit');
     Route::put('/profile/{user}' ,'ProfileController@update')->name('profile.update');
+    
+    //役割付与ルート
+    Route::put('/roles/{user}/attach', 'RoleController@attach')->name('role.attach');
+    Route::put('/roles/{user}/detach', 'RoleController@detach')->name('role.detach');
 });
 
 //contactのルート

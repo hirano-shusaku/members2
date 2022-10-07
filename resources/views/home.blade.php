@@ -17,7 +17,7 @@
                         <img src="{{ asset('storage/avatar/'.($post->user->avatar ?? 'user_defalut.jpg')) }}" class="rounded-circle" style="width:45px;height:40px;">
                         <div class="media-body ml-3"> 
                         <a href="{{ route('post.show', $post) }}">{{$post->title}}</a>
-                            <div class="text-muted small">{{ $post->user->name  }}</div>
+                            <div class="text-muted small">{{ $post->user->name ??'削除されたユーザー'  }}</div>
                         </div>
                         <a href="{{ route('post.show',$post) }}" class="btn btn-success">投稿確認</a>
                         <div class="text-muted small ml-3">

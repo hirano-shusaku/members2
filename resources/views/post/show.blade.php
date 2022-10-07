@@ -6,7 +6,7 @@
         
         <div class="text-muted small mr-3">
             <img src="{{ asset('storage/avatar/' .($post->user->avatar ?? 'user_defalut.jpg')) }}" class="rounded-circle" style="width:45px; height:40px;">
-            {{ $post->user->name }}
+            {{ $post->user->name ?? '削除ユーザー' }}
         </div>
         <h4>{{ $post->title }}</h4>
         <div>
@@ -44,7 +44,7 @@
 @foreach($post->comments as $comment)
 <div class="card-header">
     <img src="{{ asset('storage/avatar/' .($comment->user->avatar ?? 'user_defalut.jpg')) }}" class="rounded-circle" style="width:45px; height:40px;">
-    {{ $comment->user->name }}
+    {{ $comment->user->name ?? '削除ユーザー' }}
 </div>
 <div class="card-body">
     {{ $comment->body }}

@@ -8,10 +8,12 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use App\Notifications\NewVerifyEmail;
+use Illuminate\Database\Eloquent\SoftDeletes; //追記
 
 class User extends Authenticatable implements MustVerifyEmail
 {
     use HasApiTokens, HasFactory, Notifiable;
+    use SoftDeletes; //追記
 
     /**
      * The attributes that are mass assignable.
@@ -34,6 +36,8 @@ class User extends Authenticatable implements MustVerifyEmail
         'password',
         'remember_token',
     ];
+    
+    protected $dates = ['deleted_at']; //追記
 
     /**
      * The attributes that should be cast.

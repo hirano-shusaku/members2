@@ -25,7 +25,7 @@
                         <img src="{{ asset('storage/avatar/'.($comment->user->avatar ?? 'user_default.jpg')) }}" class="rounded-circle" style="width:45px; height:40px;">
                         <div class="media-body ml-3"> 
                         <a href="{{ route('post.show', $comment->post) }}">{{$comment->post->title}}</a>
-                            <div class="text-muted small">{{ $comment->post->user->name  }}</div>
+                            <div class="text-muted small">{{ $comment->post->user->name ?? '削除されユーザー'  }}</div>
                         </div>
                         <a href="{{ route('post.show',$comment->post) }}" class="btn btn-success">投稿確認</a>
                         <div class="text-muted small ml-3">
