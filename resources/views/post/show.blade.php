@@ -25,7 +25,7 @@
     
     <div class="card-body">
         <p class="card-text">
-            {{ $post->body }}
+            {!! nl2br(e($post->body)) !!}
         </p>
         @if($post->image)
         <div>（画像ファイル：{{ $post->image }}）</div>

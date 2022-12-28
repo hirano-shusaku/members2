@@ -27,7 +27,7 @@
                     </div>
                 </div>
                 <div class="card-body">
-                    <p>{{ Str::limit($post->body,100,'......') }}</p>
+                    <p>{!! nl2br(e(Str::limit($post->body,100,'......'))) !!}</p>
                 </div>
                 
                 @if($post->image)
